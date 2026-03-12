@@ -1132,9 +1132,20 @@ rg-m.com`
     );
 
     // Abrir cliente de email com dados preenchidos
-    setTimeout(() => {
-      window.location.href = `mailto:contato@rg-m.com?subject=${emailSubject}&body=${emailBody}`;
-    }, 1200);
+    fetch('https://formspree.io/f/https://formspree.io/f/xpqyrybr', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    nome: name,
+    email: email,
+    empresa: company,
+    faturamento: revenue,
+    cargo: role,
+    score: pct + '%',
+    nivel: nivel,
+    detalhes: detalhes
+  })
+});
   }
 </script>
 </body>
