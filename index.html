@@ -1109,27 +1109,7 @@
 
     const nivel = pct <= 40 ? 'OPERAÇÃO EM RISCO' : pct <= 65 ? 'POTENCIAL SUBAPROVEITADO' : 'BOA ESTRUTURA - HORA DE ESCALAR';
 
-    const emailSubject = encodeURIComponent(`[RG-M] Novo diagnóstico — ${name} | ${company} | ${pct}% — ${nivel}`);
-    const emailBody = encodeURIComponent(
-`NOVO LEAD — DIAGNÓSTICO COMERCIAL RG-M
-=======================================
-
-DADOS DO LEAD:
-Nome: ${name}
-E-mail: ${email}
-Empresa: ${company}
-Faturamento: ${revenue}
-Cargo: ${role}
-
-RESULTADO DO DIAGNÓSTICO:
-Pontuação: ${pct}% — ${nivel}
-
-RESPOSTAS DETALHADAS:
-${detalhes}
-=======================================
-Enviado automaticamente pelo funil diagnóstico RG-M
-rg-m.com`
-    );
+    
 
     // Abrir cliente de email com dados preenchidos
 fetch('https://formspree.io/f/xpqyrybr', {
